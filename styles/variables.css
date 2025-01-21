@@ -1,1 +1,31 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-inter: 'Inter-Variable';
+  --font-start: 'PressStart2P-Regular';
+  --header-width: 100%;
+  --card-padding-top: 4px;
+  --card-padding-bottom: 6px;
+  --background-image: 
+    repeating-linear-gradient(
+      90deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      #d3d3d3 0px,
+      #d3d3d3 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(
+      0deg,
+      #1a1a1a 0%,
+      #e7e7e7 100%
+    );
+  --background-color: #fff;
+}
+
+/*--width-375-700: clamp(375px, 260.5634px + 30.5164vw, 700px);*/

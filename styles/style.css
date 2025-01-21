@@ -13,4 +13,370 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-inter), sans-serif;
+  font-variation-settings: "wght" 400;
+  max-width: 700px;
+  margin: 0 auto;
+  
+}
+body {
+  background-image: var(--background-image);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  min-width: var(--header-width);
+  margin: 100px 0;
+  background-color: var(--background-color);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-start);
+  font-weight: 400;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4687rem + 9.9996vw, 7.531rem);
+  border: #000 2px solid;
+  text-transform: uppercase;
+}
+
+.header-title {
+  font-size: clamp(3.06rem, 2.7072rem + 1.5054vw, 4.062rem);
+}
+
+.header-subtitle {
+  font-size: clamp(0.875rem, 0.6771rem + 0.8443vw, 1.437rem)
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+.card {
+  font-family: inherit;
+  border: #000 2px solid;
+  background-color: var(--background-color);
+}
+
+.card-title {
+  font-size: 18px;
+  font-variation-settings: "wght" 700;
+  padding: var(--card-padding-top) 10px var(--card-padding-bottom);
+}
+
+.card-img-content {
+  position: relative;
+}
+
+.card-main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.card-img {
+  width: 100%;
+  max-height: 696px;
+  object-fit: cover;
+}
+
+.card-text {
+  font-size: 18px;
+  text-wrap: wrap;
+  line-height: 21px;
+}
+
+.img-textup {
+  text-transform: uppercase;
+}
+
+.img-text {
+  font-family: var(--font-start);
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  -webkit-text-stroke: 0.5px #fff;
+}
+
+@supports (text-stroke: 0.5px #fff) {
+  .img-text {
+    text-stroke: 0.5px #fff;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 24px 25px 25px 25px;
+}
+
+.card-reaction {
+  display: flex;
+  justify-content: end;
+  gap: 4px;
+  height: 38px;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  padding: 2px 0;
+  border-color: transparent;
+  transition: border-color 0.3s;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: #000;
+}
+
+.core{
+  fill: transparent;
+  transition: fill 0.3s ease-in-out, fill 0.3s ease-in-out 0.03s;
+}
+
+.counter {
+  fill: transparent;
+  transition: fill 0.3s ease-in-out 0.05s;
+}
+
+.main-body {
+  transition: fill 0.3s ease-in-out 0.06s;
+}
+
+.heart {
+  transform-origin: center;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out 0.1s;
+}
+
+.sparks {
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.3s;
+}
+
+.card__icon-button:hover .core,
+.card__icon-button:hover .counter{
+  fill: black;
+}
+
+.card__icon-button:active .core,
+.card__icon-button:active .counter{
+  fill: #FF0000;
+}
+
+.like-icon.is-liked .core {
+  fill: #FF0000;
+}
+
+.like-icon.is-liked .counter {
+  fill: #FF0000;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #FF0000;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 1 0.1s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-opacity 0.3s ease-in 1 0.3s;
+}
+
+@keyframes heart-scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks-opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+.card__like-button {
+  background-color: transparent;
+  position: relative;
+  padding: 9px 0;
+  width: 130px;
+  height: 38px;
+  transition: box-shadow 0.5s;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.card__like-button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+.card__like-button:hover::after {
+  transform: translateX(0);
+}
+
+.card__like-button:hover .button__text {
+  mix-blend-mode: difference;
+  color: #fff;
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px #000;
+}
+
+.button__text {
+  position: relative;
+  font-family: var(--font-start);
+  z-index: 1;
+  font-size: 14px;
+  color: #000;
+  transition: color 0.5s ease-in-out;
+}
+
+.save-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--background-color);
+  border: #000 2px solid;
+  padding: 15px 20px;
+  margin-bottom: 100px;
+  transition: box-shadow 0.5s;
+}
+
+.save-button:focus-visible {
+  box-shadow: 2px 2px #000;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.dialog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 40px;
+  overflow: hidden;
+  height: 191px;
+  max-width: 353px;
+}
+
+.diallog-main {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-start), sans-serif;
+  font-size: 11px;  
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.svg-dialog {
+  min-width: 39px;
+  height: 39px;
+}
+
+.dialog-button {
+  font-family: var(--font-start), sans-serif;
+  background-color: #fff;
+  border: 2px #000 solid;
+  padding: 10px 112.5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  min-width: 257px;
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} 
+
+.img-filter-blur {
+  filter: blur(4px);
+}
+
+.img-filter-invert {
+  filter: invert(70%);
+}
+
+.img-filter-huerotate {
+  filter: hue-rotate(0.5turn);
+}
+
+.img-filter-sepia {
+  filter: sepia(0.6);
+}
+
+.img-filter-contrast {
+  filter: contrast(200%);
+}
+
+.img-filter-mix {
+  filter: contrast(150%) blur(1px) brightness(120%);
+}
+
+@media (width > 375px) {
+  .img-text {
+    right: 25px;
+  }
+
+  .save-button {
+    flex-direction: row;
+  }
+
+  .svg-save {
+    max-width: 21px;
+    max-height: 21px;
+  }
+
+  .dialog-section {
+    padding: 30px;
+  }
+
+  .dialog-button {
+    padding: 10px 132.5px;
+  }
 }
