@@ -220,6 +220,7 @@
               <span class="button__text">Like</span>
             </button>
           </div>
+        </div>  
       </section>
       <section class="card">
         <h2 class="card-title">
@@ -343,14 +344,14 @@
         </div>
       </section>
       <section class="save">
-        <button class="save-button" onclick="window['save'].showModal()" 
-        aria-controls="save">
-        <svg width="29" height="28" viewBox="0 0 29 28">
-          <use xlink:href="#desket"></use>
-        </svg>                      
+        <button class="save-button" onclick="document.getElementById('save').showModal()" aria-controls="save">
+          <svg width="29" height="28" viewBox="0 0 29 28">
+            <use xlink:href="#desket"></use>
+          </svg>
           <span class="button__text">Сохранить на память</span>
         </button>
       </section>
+      
       <dialog class="dialog-section" id="save">
         <div class="diallog-main">
           <svg class="svg-dialog" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" id="desket">
@@ -434,14 +435,14 @@
             <rect x="28.5" y="10.769" width="2.15385" height="2.15385" transform="rotate(-180 28.5 10.769)" fill="black"/>
             <rect x="28.5" y="8.61523" width="2.15385" height="2.15385" transform="rotate(-180 28.5 8.61523)" fill="black"/>
             <rect x="28.5" y="6.46143" width="2.15385" height="2.15385" transform="rotate(-180 28.5 6.46143)" fill="black"/>
-            </svg>
+          </svg>
           <h3 class="dialog-title">Вставьте дискету, чтобы продолжить</h3>
         </div>
         <form>
-          <button class="dialog-button" type="button" onclick="window['save'].close()" 
-          aria-controls="save">Ок</button>
+          <button class="dialog-button" type="button" onclick="document.getElementById('save').close()" aria-controls="save">Ок</button>
         </form>
       </dialog>
+      
     </main>
     <script src="./scripts/like.js"></script>
   </body>
