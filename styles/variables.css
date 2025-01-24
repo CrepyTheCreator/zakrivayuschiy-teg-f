@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
   --font-inter: 'Inter-Variable';
-  --font-start: 'PressStart2P-Regular';
+  --font-start: 'PressStart2P';
   --header-width: 100%;
   --card-padding-top: 4px;
   --card-padding-bottom: 6px;
