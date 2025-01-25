@@ -382,15 +382,15 @@ dialog:not([open]) {
   }
 
   .dialog-section {
-    padding: 26px;
+    padding: 30px;
     max-width: 353px;
   }
 
   .dialog-button {
-    padding: 10px 132.5px;
+    padding: 10px 129px;
   }
 
   .diallog-main {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
